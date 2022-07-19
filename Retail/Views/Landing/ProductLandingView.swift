@@ -19,8 +19,8 @@ struct ProductLandingView: View {
 
     var body: some View {
         switch viewModel.viewState {
-        case .isReady: productGridView
-        case .isLoading: ProgressView()
+        case .ready: productGridView
+        case .loading: ProgressView()
         case .error: errorView
         }
     }
@@ -53,12 +53,12 @@ extension ProductLandingView {
                         ProductView(viewModel: productViewModel)
                     }
                 }
+                .padding()
                 .navigationBarTitle(viewModel.title, displayMode: .inline)
                 .toolbar {
                     toolbar
                 }
             }
-            .frame(maxWidth: .infinity)
         }
         .navigationBarHidden(true)
     }

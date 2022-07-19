@@ -11,7 +11,7 @@ import Combine
 class NetworkingManager {
 
     static func download(url: URL) -> AnyPublisher<Data, Error> {
-        return URLSession.shared.dataTaskPublisher(for: url)
+        URLSession.shared.dataTaskPublisher(for: url)
             .subscribe(on: DispatchQueue.global())
             .tryMap { try handleURLResponse(output: $0, url: url) }
             .receive(on: DispatchQueue.main)

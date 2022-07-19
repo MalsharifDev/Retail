@@ -11,8 +11,8 @@ import Combine
 final class ProductLandingViewModel: ObservableObject {
 
     enum ViewState {
-        case isReady
-        case isLoading
+        case ready
+        case loading
         case error
     }
 
@@ -32,12 +32,12 @@ final class ProductLandingViewModel: ObservableObject {
     @Published var currency = ""
 
     // Published UI properties
-    @Published var viewState: ViewState = .isLoading
+    @Published var viewState: ViewState = .loading
     @Published var shouldShowWishlistView = false
 
     // Convenience property
     private var isWishlistEmpty: Bool {
-        Wishlist.all(in: self.localStorage).first?.items.isEmpty == true
+        Wishlist.all(in: self.localStorage).first?.items.first == nil
     }
 
     // MARK: - Init
@@ -53,7 +53,7 @@ final class ProductLandingViewModel: ObservableObject {
         let storedLanding = Landing.all(in: localStorage)
 
         guard storedLanding.isEmpty == true else {
-            viewState = .isReady
+            viewState = .ready
 
             productList = storedLanding.first?.items ?? []
             title = storedLanding.first?.title ?? ""
@@ -62,12 +62,14 @@ final class ProductLandingViewModel: ObservableObject {
             return
         }
 
-        viewState = .isLoading
+        viewState = .loading
 
         productLandingService.$landing
             .sink { [weak self] landing in
                 guard let self = self, !landing.isEmpty else { return }
-                
+
+                self.viewState = .ready
+
                 self.title = landing.title
                 self.currency = landing.currency
                 self.productList = landing.items
@@ -79,7 +81,7 @@ final class ProductLandingViewModel: ObservableObject {
         productLandingService.$completionState
             .sink { [weak self] completionState in
                 switch completionState {
-                case .success: self?.viewState = .isReady
+                case .success: break
                 case .failure: self?.viewState = .error
                 }
             }

@@ -18,12 +18,13 @@ struct ProductDescriptionView: View {
     var nameFont: Font = .callout
     var priceFont: Font = .footnote
     var horizontalAlignment: HorizontalAlignment = .leading
+    var topPadding: CGFloat = 10
 
     var body: some View {
         VStack(alignment: horizontalAlignment) {
             Text(brand)
                 .bold()
-                .padding(.top)
+                .padding(.top, topPadding)
                 .font(brandFont)
 
             Text(name)
