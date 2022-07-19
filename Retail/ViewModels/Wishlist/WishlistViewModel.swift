@@ -21,7 +21,7 @@ final class WishlistViewModel: ObservableObject {
 
     // UI Properties
     var shouldDismiss: Bool {
-        !wishlist.id.isEmpty && wishlist.items.isEmpty
+        wishlist.items.first == nil
     }
 
     var title: String {

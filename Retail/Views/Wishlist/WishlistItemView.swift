@@ -75,7 +75,8 @@ extension WishlistItemView {
             name: viewModel.name,
             price: viewModel.price,
             originalPrice: viewModel.originalPrice,
-            horizontalAlignment: .leading
+            horizontalAlignment: .leading,
+            topPadding: 0
         )
     }
 
@@ -95,7 +96,6 @@ extension WishlistItemView {
         .padding(.trailing, 40)
         .foregroundColor(.black)
     }
-
 }
 
 struct WishlistItemView_Previews: PreviewProvider {
