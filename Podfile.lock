@@ -1,0 +1,32 @@
+PODS:
+  - Realm (10.25.2):
+    - Realm/Headers (= 10.25.2)
+  - Realm/Headers (10.25.2)
+  - RealmSwift (10.25.2):
+    - Realm (= 10.25.2)
+  - Runtime (2.2.2)
+  - Unrealm (1.9.4):
+    - Realm
+    - RealmSwift
+    - Runtime
+
+DEPENDENCIES:
+  - RealmSwift
+  - Unrealm
+
+SPEC REPOS:
+  trunk:
+    - Realm
+    - RealmSwift
+    - Runtime
+    - Unrealm
+
+SPEC CHECKSUMS:
+  Realm: 978303663d0509166498f423d112e5ee97d4c91b
+  RealmSwift: a0c30c1efc49e928a0a6f8fb141bb2629616d79b
+  Runtime: 67741bd196fb4ad821c4d259ccc527bf734d8806
+  Unrealm: 547a3e1432a86df5cff7b74927a60cc664cc2a0d
+
+PODFILE CHECKSUM: df1798dfffc8e5c422565253531ca18751353d3a
+
+COCOAPODS: 1.11.3
