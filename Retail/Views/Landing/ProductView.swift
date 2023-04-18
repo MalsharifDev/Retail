@@ -61,6 +61,7 @@ extension ProductView {
 }
 
 struct ProductView_Previews: PreviewProvider {
+
     static let mockProductViewModel = ProductViewModel(
         item:
             WishlistItem(

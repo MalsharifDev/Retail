@@ -85,6 +85,7 @@ extension ProductLandingView {
 }
 
 struct ProductLandingView_Previews: PreviewProvider {
+
     static var previews: some View {
         ProductLandingView()
     }

@@ -12,7 +12,7 @@ struct ProductDetailView: View {
     @ObservedObject var viewModel: ProductDetailViewModel
     @Environment(\.presentationMode) var mode
 
-    let imageSize = CGSize(width: UIScreen.width - 32, height: UIScreen.height - 450)
+    private let imageSize = CGSize(width: UIScreen.width - 32, height: UIScreen.height - 450)
 
     var body: some View {
         NavigationView {
@@ -44,6 +44,7 @@ struct ProductDetailView: View {
 }
 
 struct ProductDetailView_Previews: PreviewProvider {
+
     static let mockProductDetailView = ProductDetailViewModel(
         item:
             Product(
@@ -63,7 +64,6 @@ struct ProductDetailView_Previews: PreviewProvider {
         ProductDetailView(viewModel: mockProductDetailView)
     }
 }
-
 
 extension ProductDetailView {
 

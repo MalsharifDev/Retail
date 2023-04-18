@@ -99,6 +99,7 @@ extension WishlistItemView {
 }
 
 struct WishlistItemView_Previews: PreviewProvider {
+    
     static let mockWishlistItemViewModel = WishlistItemViewModel(
         item:
             WishlistItem(

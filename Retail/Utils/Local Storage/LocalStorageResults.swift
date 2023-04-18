@@ -104,16 +104,16 @@ extension LocalStorageResults {
      - returns: A token which must be held for as long as you want updates to be delivered.
      */
     func observe(_ block: @escaping (StorageResultsCollectionChange<LocalStorageResults<E>>) -> Void) -> StorageNotificationToken? {
-		return self.didObserveHandler? { [weak self] change in
-			switch change {			
-			case .update(let new, deletions: _, insertions: _, modifications: _):
-				self?.result = Array(new)
+        didObserveHandler? { [weak self] change in
+            switch change {
+            case .update(let new, deletions: _, insertions: _, modifications: _):
+                self?.result = Array(new)
 
-			default: break
-			}
+            default: break
+            }
 
-			block(change)
-		}
+            block(change)
+        }
     }
 }
 

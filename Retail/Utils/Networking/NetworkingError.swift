@@ -17,7 +17,7 @@ enum NetworkingError: LocalizedError {
             return "[🔥] Bad response from URL: \(url)"
 
         case .unknown:
-            return "[⚠️] Unknown error occured."
+            return "[⚠️] Unknown error occurred."
         }
     }
 }

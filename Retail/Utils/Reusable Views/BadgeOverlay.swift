@@ -20,32 +20,31 @@ struct BadgeOverlay: View {
         ZStack {
             VStack(alignment: .leading, spacing: spacing) {
                 if badges.contains(.kidsUnisex) {
-                    BadgeView(
-                        title: Badge.kidsUnisex.rawValue,
-                        font: font,
-                        height: height
-                    )
+                    badgeView(for: .kidsUnisex)
                 }
 
                 HStack(spacing: spacing) {
                     if badges.contains(.new) {
-                        BadgeView(
-                            title: Badge.new.rawValue,
-                            font: font,
-                            height: height
-                        )
+                        badgeView(for: .new)
                     }
 
                     if badges.contains(.sale) {
-                        BadgeView(
-                            title: Badge.sale.rawValue,
-                            font: font,
-                            height: height
-                        )
+                        badgeView(for: .sale)
                     }
                 }
             }
             .padding(padding)
         }
+    }
+}
+
+extension BadgeOverlay {
+
+    private func badgeView(for badge: Badge) -> some View {
+        BadgeView(
+            title: badge.rawValue,
+            font: font,
+            height: height
+        )
     }
 }
