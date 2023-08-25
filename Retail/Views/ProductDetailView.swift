@@ -96,7 +96,7 @@ extension ProductDetailView {
             priceFont: .system(size: 16),
             horizontalAlignment: .center
         )
-            .padding([.leading, .trailing])
+        .padding(.horizontal)
     }
 
     private var addToBagButtonView: some View {
@@ -113,7 +113,7 @@ extension ProductDetailView {
                                 RoundedRectangle(cornerRadius: 2.5)
                                     .foregroundColor(viewModel.isAddedToCart ? .gray : .black)
                             }
-                            .padding([.leading, .trailing])
+                            .padding(.horizontal)
                             
                             Text(AppView.ProductDetail.addToBagButtonLabel)
                         }
@@ -121,7 +121,7 @@ extension ProductDetailView {
                         .disabled(viewModel.isAddedToCart)
                         .frame(maxWidth: .infinity, maxHeight: 55, alignment: .center)
                         .foregroundColor(.white)
-                        .padding([.leading, .trailing, .bottom])
+                        .padding([.horizontal, .bottom])
                 )
                 .ignoresSafeArea()
         }

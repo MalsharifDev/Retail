@@ -22,7 +22,7 @@ struct ProductView: View {
         }
         .frame(width: 180, height: 275)
         .padding(.top, 45)
-        .padding([.leading, .trailing])
+        .padding(.horizontal)
     }
 }
 
