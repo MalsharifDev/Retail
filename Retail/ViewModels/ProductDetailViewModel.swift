@@ -31,7 +31,7 @@ final class ProductDetailViewModel: ProductViewModel {
         super.init(item: item, currency: currency)
 
         if isItemInCart {
-            self.isAddedToCart = true
+            isAddedToCart = true
         }
     }
 
