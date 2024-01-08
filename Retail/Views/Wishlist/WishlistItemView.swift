@@ -24,7 +24,8 @@ struct WishlistItemView: View {
 
             NavigationLink(
                 destination: ProductDetailView(viewModel: productDetailViewModel),
-                isActive: $shouldShowDetailView) {
+                isActive: $shouldShowDetailView
+            ) {
                     Button {
                         shouldShowDetailView.toggle()
                     } label: {
